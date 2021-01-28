@@ -1,6 +1,5 @@
 package com.huisam.kotlinweb.posts.domain
 
-import java.math.BigDecimal
 import javax.persistence.*
 
 @Entity
@@ -16,4 +15,9 @@ class Posts(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
-)
+
+) {
+    fun toDomain(): PostsDomain {
+        return PostsDomain(id = this.id!!, title = this.title, content = this.content, author = this.author)
+    }
+}

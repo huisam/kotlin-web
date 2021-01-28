@@ -1,7 +1,6 @@
 package com.huisam.kotlinweb.posts.domain
 
-import org.assertj.core.api.Assertions
-import org.assertj.core.api.Assertions.*
+import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,7 +24,7 @@ internal class PostsTest @Autowired constructor(
         val result = postsRepository.findById(1L)
 
         // then
-        assertThat(result).hasValue(posts)
+        then(result).hasValue(posts)
     }
 
     @AfterEach

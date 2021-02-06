@@ -14,17 +14,20 @@ internal class PostsTest @Autowired constructor(
 ) {
 
     @Test
-    internal fun `게시글을 제대로 만들고 저장한다`() {
+    fun `게시글을 제대로 만들고 저장한다`() {
         // given
         val posts = Posts("title", "content")
-        entityManager.persist(posts)
-        entityManager.flush()
+        posts.text = "1"
+        val save = postsRepository.save(posts)
+        entityManager.clear()
 
         // when
         val result = postsRepository.findById(1L)
 
         // then
+        then(result.get().text).isEqualTo("length 1")
         then(result).hasValue(posts)
+
     }
 
     @AfterEach

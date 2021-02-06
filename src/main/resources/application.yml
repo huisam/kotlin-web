@@ -8,3 +8,21 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+
+comment:
+  service:
+    url: http://localhost:1234
+
+post:
+  service:
+    url: http://localhost:1235
+
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+

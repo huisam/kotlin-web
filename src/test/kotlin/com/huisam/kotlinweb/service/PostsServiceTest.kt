@@ -20,12 +20,12 @@ internal class PostsServiceTest (
     @Test
     internal fun `게시글을 제대로 저장하고 꺼내온다`() {
         // given
-        val postsId = postsService.save(PostsSaveRequestsDto(title = "제목", content = "내용", author = "나"))
+        val postsId = postsService.save(PostsSaveRequestsDto(title = "제목", content = "내용"))
 
         // when
         val result = postsService.findById(postsId)
 
-        then(result).isEqualTo(PostsDomain(id = postsId, title = "제목", content = "내용", author = "나"))
+        then(result).isEqualTo(PostsDomain(id = postsId, title = "제목", content = "내용"))
     }
 
     @Test

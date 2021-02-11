@@ -3,6 +3,7 @@ package com.huisam.kotlinweb.fegin
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock
+import com.huisam.kotlinweb.domain.author.Author
 import com.huisam.kotlinweb.domain.comment.Comment
 import com.huisam.kotlinweb.domain.posts.Posts
 import org.springframework.context.annotation.Bean
@@ -46,7 +47,7 @@ class MockConfiguration(
                         .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                         .withBody(
                             objectMapper.writeValueAsString(Posts(id = 1L, title = "book", content = "책",
-                                author = "hwijin", comments = mutableListOf(Comment(name = "hi", content = "content", createdAt = LocalDateTime.now()))
+                                author = Author(name = "huisam"), comments = mutableListOf(Comment(name = "hi", content = "content", createdAt = LocalDateTime.now()))
                             ))
                         )
                     )

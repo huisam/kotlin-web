@@ -1,5 +1,6 @@
 package com.huisam.kotlinweb.domain.posts
 
+import com.huisam.kotlinweb.domain.author.Author
 import com.huisam.kotlinweb.domain.comment.Comment
 import javax.persistence.*
 
@@ -11,14 +12,16 @@ class Posts(
     @Column(columnDefinition = "TEXT", nullable = false)
     var content: String,
 
-    @Column
     @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "comment_id")
     val comments: MutableList<Comment> = mutableListOf(),
 
-    var author: String? = null,
+    @Embedded
+    var author: Author? = null,
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "posts_id")
     var id: Long? = null,
 
     ) {
@@ -33,10 +36,22 @@ class Posts(
     fun addComments(comment: Comment) {
         comments.add(comment)
         comment.posts = this
-
     }
 
     fun toDomain(): PostsDomain {
-        return PostsDomain(id = this.id!!, title = this.title, content = this.content, author = this.author)
+        return PostsDomain(id = this.id!!, title = this.title, content = this.content, author = this.author?.toDomain())
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Posts) return false
+
+        if (id != other.id) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return id?.hashCode() ?: 0
     }
 }

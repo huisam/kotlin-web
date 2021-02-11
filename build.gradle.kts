@@ -35,8 +35,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-mustache")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-//    implementation("org.springframework.cloud:spring-cloud-starter-contract-stub-runner")
-    implementation("org.springframework.cloud:spring-cloud-starter-contract-wire-mock")
+    implementation("org.springframework.cloud:spring-cloud-contract-wiremock")
 
     runtimeOnly("com.h2database:h2")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

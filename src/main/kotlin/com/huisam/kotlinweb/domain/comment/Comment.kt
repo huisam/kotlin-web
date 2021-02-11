@@ -1,6 +1,6 @@
-package com.huisam.kotlinweb.comment.domain
+package com.huisam.kotlinweb.domain.comment
 
-import com.huisam.kotlinweb.posts.domain.Posts
+import com.huisam.kotlinweb.domain.posts.Posts
 import java.time.LocalDateTime
 import javax.persistence.*
 

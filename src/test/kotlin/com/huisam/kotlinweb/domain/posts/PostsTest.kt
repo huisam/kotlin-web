@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.posts.domain
+package com.huisam.kotlinweb.domain.posts
 
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.AfterEach

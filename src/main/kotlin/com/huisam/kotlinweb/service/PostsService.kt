@@ -1,9 +1,9 @@
-package com.huisam.kotlinweb.posts
+package com.huisam.kotlinweb.service
 
-import com.huisam.kotlinweb.posts.domain.PostsDomain
-import com.huisam.kotlinweb.posts.domain.PostsRepository
-import com.huisam.kotlinweb.posts.dto.PostsSaveRequestsDto
-import com.huisam.kotlinweb.posts.exception.EntityNotFoundException
+import com.huisam.kotlinweb.domain.posts.PostsDomain
+import com.huisam.kotlinweb.domain.posts.PostsRepository
+import com.huisam.kotlinweb.dto.PostsSaveRequestsDto
+import com.huisam.kotlinweb.exception.EntityNotFoundException
 import org.springframework.stereotype.Service
 import javax.transaction.Transactional
 

@@ -1,6 +1,6 @@
-package com.huisam.kotlinweb.posts.domain
+package com.huisam.kotlinweb.domain.posts
 
-import com.huisam.kotlinweb.comment.domain.Comment
+import com.huisam.kotlinweb.domain.comment.Comment
 import javax.persistence.*
 
 @Entity
@@ -21,7 +21,7 @@ class Posts(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
-) {
+    ) {
 
     @Column
     var text: String? = null

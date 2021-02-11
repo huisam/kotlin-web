@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.comment.domain
+package com.huisam.kotlinweb.domain.comment
 
 import org.springframework.data.jpa.repository.JpaRepository
 

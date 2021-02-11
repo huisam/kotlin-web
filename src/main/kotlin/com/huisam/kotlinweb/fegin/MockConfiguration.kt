@@ -3,8 +3,8 @@ package com.huisam.kotlinweb.fegin
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock
-import com.huisam.kotlinweb.comment.domain.Comment
-import com.huisam.kotlinweb.posts.domain.Posts
+import com.huisam.kotlinweb.domain.comment.Comment
+import com.huisam.kotlinweb.domain.posts.Posts
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpHeaders

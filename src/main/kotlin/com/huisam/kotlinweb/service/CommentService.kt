@@ -1,7 +1,7 @@
-package com.huisam.kotlinweb.comment.service
+package com.huisam.kotlinweb.service
 
-import com.huisam.kotlinweb.comment.domain.Comment
-import com.huisam.kotlinweb.comment.domain.CommentRepository
+import com.huisam.kotlinweb.domain.comment.Comment
+import com.huisam.kotlinweb.domain.comment.CommentRepository
 import org.springframework.stereotype.Service
 
 @Service

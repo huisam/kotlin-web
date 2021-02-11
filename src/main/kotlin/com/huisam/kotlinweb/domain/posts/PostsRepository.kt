@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.posts.domain
+package com.huisam.kotlinweb.domain.posts
 
 import org.springframework.data.jpa.repository.JpaRepository
 

@@ -1,6 +1,6 @@
-package com.huisam.kotlinweb.posts.dto
+package com.huisam.kotlinweb.dto
 
-import com.huisam.kotlinweb.posts.domain.Posts
+import com.huisam.kotlinweb.domain.posts.Posts
 
 data class PostsSaveRequestsDto(
     var title: String,

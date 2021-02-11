@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.comment.domain
+package com.huisam.kotlinweb.domain.comment
 
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.Test

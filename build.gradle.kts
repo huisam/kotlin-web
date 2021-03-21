@@ -3,6 +3,7 @@ import Build_gradle.Version.testcontainersVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    id("org.springframework.boot") version "2.4.4"
     id("org.springframework.boot") version "2.4.1"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.31"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"

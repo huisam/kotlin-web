@@ -28,7 +28,10 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        return objectMapper.readValue(response.body().toString())
+        val responseBody = objectMapper.readValue<List<RestPlaceHolderPost>>(response.body().toString())
+
+        log.info("request : ${response.request()}, response : ${response.body()}")
+        return responseBody
     }
 
     fun post(id: Long): RestPlaceHolderPost {
@@ -38,8 +41,6 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        response.body().toString()
-
         val responseBody = objectMapper.readValue<RestPlaceHolderPost>(response.body().toString())
 
         log.info("request : ${response.request()}, response : ${response.body()}")

@@ -3,7 +3,7 @@ import Build_gradle.Version.testcontainersVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.4.1"
+    id("org.springframework.boot") version "2.4.4"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.21"
     kotlin("jvm") version "1.4.21"
@@ -25,8 +25,8 @@ repositories {
 }
 
 object Version {
-    const val springBootVersion = "2.4.1"
-    const val springCloudVersion = "2020.0.1"
+    const val springBootVersion = "2.4.4"
+    const val springCloudVersion = "2020.0.2"
     const val testcontainersVersion = "1.15.1"
 }
 
@@ -35,12 +35,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-mustache")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("org.springframework.cloud:spring-cloud-contract-wiremock")
+    implementation("org.springframework.boot:spring-boot-starter-json")
 
     runtimeOnly("com.h2database:h2")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")
 }

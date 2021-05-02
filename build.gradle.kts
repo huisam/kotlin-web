@@ -43,7 +43,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
-    testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8")
+    testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")
 }

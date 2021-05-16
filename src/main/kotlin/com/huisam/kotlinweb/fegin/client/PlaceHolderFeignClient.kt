@@ -21,6 +21,7 @@ class RemotePlaceHolderClient(
 ) {
     private val log = logger(RemotePlaceHolderClient::class.java)
 
+    @Retryable(backoff = Backoff(delay = 150L), maxAttempts = 3)
     fun posts(): List<RestPlaceHolderPost> {
         val response = try {
             placeHolderFeignClient.posts().throwIfError()
@@ -58,7 +59,6 @@ class RemotePlaceHolderClient(
 @FeignClient(value = "placeholder", url = "\${external.api.placeHolder}")
 interface PlaceHolderFeignClient {
 
-    @Retryable(backoff = Backoff(delay = 500L), maxAttempts = 3)
     @GetMapping("/posts")
     fun posts(): Response
 

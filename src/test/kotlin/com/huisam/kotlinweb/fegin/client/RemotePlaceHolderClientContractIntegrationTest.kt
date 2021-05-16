@@ -15,7 +15,6 @@ internal class RemotePlaceHolderClientContractIntegrationTest : FeignContractTes
         val result = client.posts()
         // then
         assertThat(result).isNotEmpty
-        assertThat(result)
     }
 
     @Test

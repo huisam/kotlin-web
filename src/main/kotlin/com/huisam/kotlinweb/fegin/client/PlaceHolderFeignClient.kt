@@ -5,6 +5,7 @@ import com.huisam.kotlinweb.fegin.client.rest.RestPlaceHolderPost
 import com.huisam.kotlinweb.objectmapper.readValue
 import feign.FeignException
 import feign.Response
+import org.apache.commons.io.IOUtils
 import org.hibernate.annotations.common.util.impl.LoggerFactory.logger
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.http.HttpStatus
@@ -29,10 +30,10 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        val responseBody = objectMapper.readValue<List<RestPlaceHolderPost>>(response.body().toString())
+        val responseBody = IOUtils.toString(response.body().asInputStream())
+        log.info("request : ${response.request()}, response : $responseBody")
 
-        log.info("request : ${response.request()}, response : ${response.body()}")
-        return responseBody
+        return objectMapper.readValue(responseBody)
     }
 
     fun post(id: Long): RestPlaceHolderPost {
@@ -42,10 +43,9 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        val responseBody = objectMapper.readValue<RestPlaceHolderPost>(response.body().toString())
-
         log.info("request : ${response.request()}, response : ${response.body()}")
-        return responseBody
+
+        return objectMapper.readValue(response.body().toString())
     }
 
     private fun Response.throwIfError(): Response {

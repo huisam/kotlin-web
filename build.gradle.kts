@@ -36,6 +36,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.retry:spring-retry")
     implementation("io.github.openfeign:feign-httpclient")
+    implementation("io.github.openfeign:feign-okhttp")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.boot:spring-boot-starter-json")
 
@@ -43,6 +44,8 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
     testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

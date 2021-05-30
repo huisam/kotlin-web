@@ -9,14 +9,16 @@ import java.time.LocalDateTime
 import javax.persistence.EntityManager
 
 @DataJpaTest(showSql = true)
-internal class CommentTest @Autowired constructor(
-    val commentRepository: CommentRepository,
-    val entityManager: EntityManager,
-) {
+internal class CommentTest {
+    @Autowired
+    private lateinit var commentRepository: CommentRepository
+
+    @Autowired
+    private lateinit var entityManager: EntityManager
 
     @Test
     @Transactional(readOnly = true)
-    internal fun `post가 없어도 comment는 저장된다`() {
+    fun `post가 없어도 comment는 저장된다`() {
         // given
         val comment = Comment(name = "huisam", content = "안녕하세요", createdAt = LocalDateTime.now())
 
@@ -28,9 +30,7 @@ internal class CommentTest @Autowired constructor(
         result.get().id = 2L
 
         // then
-        then(result)
-            .isNotEmpty
-
+        then(result).isNotEmpty
     }
 
 }

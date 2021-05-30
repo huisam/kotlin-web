@@ -13,10 +13,10 @@ import javax.transaction.Transactional
 
 @Transactional
 @SpringBootTest
-internal class PostsServiceTest (
+internal class PostsServiceTest {
     @Autowired
-    val postsService: PostsService,
-) {
+    private lateinit var postsService: PostsService
+
     @Test
     internal fun `게시글을 제대로 저장하고 꺼내온다`() {
         // given

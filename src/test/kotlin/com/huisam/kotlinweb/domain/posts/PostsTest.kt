@@ -12,7 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 internal class PostsTest : PersistenceTest() {
 
     @Autowired
-    lateinit var postsRepository: PostsRepository
+    private lateinit var postsRepository: PostsRepository
 
     @Test
     fun `게시글을 제대로 만들고 저장한다`() {

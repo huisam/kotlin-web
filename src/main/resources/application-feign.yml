@@ -1,0 +1,22 @@
+external:
+  api:
+    placeHolder: https://jsonplaceholder.typicode.com/
+
+
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+---
+spring.config.activate.on-profile: wiremock
+external:
+  api:
+    placeHolder: http://localhost:${wiremock.server.port}

@@ -31,8 +31,8 @@ object Version {
 }
 
 dependencies {
+    // spring
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-mustache")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.retry:spring-retry")
     implementation("io.github.openfeign:feign-httpclient")
@@ -40,13 +40,18 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.boot:spring-boot-starter-json")
 
+    // database
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("mysql:mysql-connector-java")
+
+    // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.2.1")
 
+    // test
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
     testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.0")

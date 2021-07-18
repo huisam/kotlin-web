@@ -1,36 +1,7 @@
-spring:
-  datasource:
-    url: jdbc:h2:tcp://localhost:1521/test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+spring.config.import:
+  - classpath:application-feign.yml
+  - classpath:application-database.yml
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate.format_sql: true
-    show-sql: true
-
-external:
-  api:
-    placeHolder: https://jsonplaceholder.typicode.com/
-
-
-feign:
-  okhttp:
-    enabled: true
-  httpclient:
-    enabled: false
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: basic
-
----
-spring.config.activate.on-profile: wiremock
-external:
-  api:
-    placeHolder: http://localhost:${wiremock.server.port}
+server:
+  port: 8081
+  shutdown: graceful

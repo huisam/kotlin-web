@@ -39,6 +39,7 @@ dependencies {
     implementation("io.github.openfeign:feign-okhttp")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.boot:spring-boot-starter-json")
+    implementation("org.springframework.boot:spring-kafka")
 
     // database
     runtimeOnly("com.h2database:h2")

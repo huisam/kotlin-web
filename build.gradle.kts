@@ -8,7 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.5.31"
     kotlin("jvm") version "1.6.0"
     kotlin("kapt") version "1.5.31"
-    kotlin("plugin.spring") version "1.5.31"
+    kotlin("plugin.spring") version "1.6.0"
     kotlin("plugin.jpa") version "1.5.31"
 }
 

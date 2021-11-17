@@ -6,7 +6,7 @@ plugins {
     id("org.springframework.boot") version "2.5.6"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.5.31"
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.6.0"
     kotlin("kapt") version "1.5.31"
     kotlin("plugin.spring") version "1.5.31"
     kotlin("plugin.jpa") version "1.5.31"

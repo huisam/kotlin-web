@@ -3,7 +3,7 @@ package com.huisam.kotlinweb.domain.student
 import org.springframework.data.jpa.repository.JpaRepository
 import javax.persistence.*
 
-interface StudentRepository : JpaRepository<Student, Long>
+interface StudentRepository : JpaRepository<Student, String>
 interface PersonRepository : JpaRepository<Person, Long>
 
 /**
@@ -23,7 +23,7 @@ class Student(
     val id: Long? = null,
 
     @Column
-    val name: String
+    var name: String
 
 ) {
     @Column
@@ -41,6 +41,10 @@ class Student(
 
     override fun hashCode(): Int {
         return id?.hashCode() ?: 0
+    }
+
+    override fun toString(): String {
+        return "Student(id=$id, name='$name')"
     }
 }
 

@@ -1,20 +1,16 @@
 package com.huisam.kotlinweb.domain.student
 
+import com.huisam.kotlinweb.domain.AbstractPersistenceTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.data.repository.findByIdOrNull
-import javax.persistence.EntityManager
 
-@DataJpaTest
-internal class StudentTest {
+
+internal class StudentTest : AbstractPersistenceTest() {
 
     @Autowired
     private lateinit var studentRepository: StudentRepository
-
-    @Autowired
-    private lateinit var entityManager: EntityManager
 
     @Autowired
     private lateinit var personRepository: PersonRepository

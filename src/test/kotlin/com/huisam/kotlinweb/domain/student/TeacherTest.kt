@@ -1,20 +1,15 @@
 package com.huisam.kotlinweb.domain.student
 
+import com.huisam.kotlinweb.domain.AbstractPersistenceTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.data.repository.findByIdOrNull
-import javax.persistence.EntityManager
 
-@DataJpaTest
-internal class TeacherTest {
+internal class TeacherTest : AbstractPersistenceTest() {
 
     @Autowired
     private lateinit var teacherRepository: TeacherRepository
-
-    @Autowired
-    private lateinit var entityManager: EntityManager
 
     @Test
     fun `teacher를 uuid기반으로 저장한다`() {

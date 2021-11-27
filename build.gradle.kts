@@ -3,7 +3,7 @@ import Build_gradle.Version.testcontainersVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.6.0"
+    id("org.springframework.boot") version "2.5.6"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.6.0"
     kotlin("jvm") version "1.6.0"
@@ -14,10 +14,10 @@ plugins {
 
 group = "com.huisam"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_15
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
-    jcenter()
+    mavenCentral()
     maven {
         url = uri("https://repo.spring.io/milestone")
     }
@@ -25,7 +25,6 @@ repositories {
 }
 
 object Version {
-    const val springBootVersion = "2.4.4"
     const val springCloudVersion = "2020.0.4"
     const val testcontainersVersion = "1.16.2"
 }
@@ -35,7 +34,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.retry:spring-retry")
-    implementation("io.github.openfeign:feign-httpclient")
+    implementation("io.github.openfeign:feign-hc5")
     implementation("io.github.openfeign:feign-okhttp")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springframework.boot:spring-boot-starter-json")
@@ -71,7 +70,7 @@ dependencyManagement {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "15"
+        jvmTarget = "17"
     }
 }
 

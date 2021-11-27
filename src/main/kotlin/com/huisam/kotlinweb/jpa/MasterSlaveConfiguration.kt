@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.datasource
+package com.huisam.kotlinweb.jpa
 
 import com.zaxxer.hikari.HikariDataSource
 import org.springframework.beans.factory.annotation.Qualifier
@@ -50,7 +50,7 @@ class MasterSlaveConfiguration {
     fun currentDataSource(routingDataSource: DataSource) = LazyConnectionDataSourceProxy(routingDataSource)
 }
 
-internal class RoutingDataSource : AbstractRoutingDataSource() {
+internal open class RoutingDataSource : AbstractRoutingDataSource() {
     override fun determineCurrentLookupKey(): Any = when {
         TransactionSynchronizationManager.isCurrentTransactionReadOnly() -> "slave"
         else -> "master"

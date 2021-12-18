@@ -9,7 +9,7 @@ plugins {
     kotlin("jvm") version "1.6.0"
     kotlin("kapt") version "1.6.0"
     kotlin("plugin.spring") version "1.6.10"
-    kotlin("plugin.jpa") version "1.6.0"
+    kotlin("plugin.jpa") version "1.6.10"
 }
 
 group = "com.huisam"

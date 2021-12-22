@@ -53,7 +53,7 @@ dependencies {
 
     // test
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
     testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")

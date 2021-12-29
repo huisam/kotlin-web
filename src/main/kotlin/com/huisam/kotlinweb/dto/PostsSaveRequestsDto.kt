@@ -1,7 +1,7 @@
 package com.huisam.kotlinweb.dto
 
-import com.huisam.kotlinweb.domain.author.Author
-import com.huisam.kotlinweb.domain.posts.Posts
+import com.huisam.kotlinweb.persistence.author.Author
+import com.huisam.kotlinweb.persistence.posts.Posts
 
 data class PostsSaveRequestsDto(
     val title: String,

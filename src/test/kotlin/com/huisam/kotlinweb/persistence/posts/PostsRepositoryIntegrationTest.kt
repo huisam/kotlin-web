@@ -1,13 +1,15 @@
-package com.huisam.kotlinweb.domain.posts
+package com.huisam.kotlinweb.persistence.posts
 
-import com.huisam.kotlinweb.domain.AbstractPersistenceTest
-import com.huisam.kotlinweb.domain.author.Author
+import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
+import com.huisam.kotlinweb.persistence.author.Author
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 
-internal class PostsTest : AbstractPersistenceTest() {
+@SpringBootTest
+internal class PostsRepositoryIntegrationTest : AbstractPersistenceTest() {
 
     @Autowired
     private lateinit var postsRepository: PostsRepository

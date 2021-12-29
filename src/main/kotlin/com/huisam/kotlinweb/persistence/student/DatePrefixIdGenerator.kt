@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.domain.student
+package com.huisam.kotlinweb.persistence.student
 
 import org.hibernate.engine.spi.SharedSessionContractImplementor
 import org.hibernate.id.enhanced.TableGenerator

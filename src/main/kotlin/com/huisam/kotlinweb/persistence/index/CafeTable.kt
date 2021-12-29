@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.index
+package com.huisam.kotlinweb.persistence.index
 
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate

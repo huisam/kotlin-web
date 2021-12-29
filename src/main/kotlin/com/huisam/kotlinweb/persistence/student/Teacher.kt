@@ -1,11 +1,8 @@
-package com.huisam.kotlinweb.domain.student
+package com.huisam.kotlinweb.persistence.student
 
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 interface TeacherRepository : JpaRepository<Teacher, UUID>
 
@@ -14,6 +11,7 @@ interface TeacherRepository : JpaRepository<Teacher, UUID>
 class Teacher(
     @Id
     @GeneratedValue
+    @Column(columnDefinition = "BINARY(16)")
     val id: UUID? = null,
 
     val name: String

@@ -1,13 +1,14 @@
-package com.huisam.kotlinweb.domain.student
+package com.huisam.kotlinweb.persistence.student
 
-import com.huisam.kotlinweb.domain.AbstractPersistenceTest
+import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.data.repository.findByIdOrNull
 
-
-internal class StudentTest : AbstractPersistenceTest() {
+@SpringBootTest
+internal class StudentRepositoryIntegrationTest : AbstractPersistenceTest() {
 
     @Autowired
     private lateinit var studentRepository: StudentRepository

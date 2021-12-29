@@ -1,5 +1,6 @@
-package com.huisam.kotlinweb.domain.author
+package com.huisam.kotlinweb.persistence.author
 
+import com.huisam.kotlinweb.domain.AuthorDomain
 import javax.persistence.Column
 import javax.persistence.Embeddable
 

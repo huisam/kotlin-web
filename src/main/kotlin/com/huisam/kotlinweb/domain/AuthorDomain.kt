@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.domain.author
+package com.huisam.kotlinweb.domain
 
 class AuthorDomain(
     val name: String,

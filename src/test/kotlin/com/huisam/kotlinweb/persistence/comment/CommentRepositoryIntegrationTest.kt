@@ -1,18 +1,18 @@
-package com.huisam.kotlinweb.domain.comment
+package com.huisam.kotlinweb.persistence.comment
 
-import com.huisam.kotlinweb.domain.AbstractPersistenceTest
+import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.transaction.annotation.Transactional
+import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 
-internal class CommentTest : AbstractPersistenceTest() {
+@SpringBootTest
+internal class CommentRepositoryIntegrationTest : AbstractPersistenceTest() {
     @Autowired
     private lateinit var commentRepository: CommentRepository
 
     @Test
-    @Transactional(readOnly = true)
     fun `post가 없어도 comment는 저장된다`() {
         // given
         val comment = Comment(name = "huisam", content = "안녕하세요", createdAt = LocalDateTime.now())

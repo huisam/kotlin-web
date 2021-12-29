@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.domain.comment
+package com.huisam.kotlinweb.persistence.comment
 
 import org.springframework.data.jpa.repository.JpaRepository
 

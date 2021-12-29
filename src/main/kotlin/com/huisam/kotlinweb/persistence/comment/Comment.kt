@@ -1,10 +1,11 @@
-package com.huisam.kotlinweb.domain.comment
+package com.huisam.kotlinweb.persistence.comment
 
-import com.huisam.kotlinweb.domain.posts.Posts
+import com.huisam.kotlinweb.persistence.posts.Posts
 import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
+@Table(name = "comment")
 class Comment(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

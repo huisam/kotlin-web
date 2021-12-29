@@ -1,6 +1,4 @@
-package com.huisam.kotlinweb.domain.posts
-
-import com.huisam.kotlinweb.domain.author.AuthorDomain
+package com.huisam.kotlinweb.domain
 
 class PostsDomain(
     val id: Long,
@@ -8,7 +6,7 @@ class PostsDomain(
     val content: String,
     val author: AuthorDomain? = null,
 
-) {
+    ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is PostsDomain) return false

@@ -1,10 +1,12 @@
-package com.huisam.kotlinweb.domain.posts
+package com.huisam.kotlinweb.persistence.posts
 
-import com.huisam.kotlinweb.domain.author.Author
-import com.huisam.kotlinweb.domain.comment.Comment
+import com.huisam.kotlinweb.domain.PostsDomain
+import com.huisam.kotlinweb.persistence.author.Author
+import com.huisam.kotlinweb.persistence.comment.Comment
 import javax.persistence.*
 
 @Entity
+@Table(name = "posts")
 class Posts(
     @Column(length = 500, nullable = false)
     var title: String,
@@ -28,7 +30,7 @@ class Posts(
 
     @Column
     var text: String? = null
-        get() = if (field != null && field!!.length == 1 ) {
+        get() = if (field != null && field!!.length == 1) {
             "length 1"
         } else
             field ?: "not found"

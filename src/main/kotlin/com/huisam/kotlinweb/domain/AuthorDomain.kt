@@ -1,6 +1,6 @@
 package com.huisam.kotlinweb.domain
 
-class AuthorDomain(
+data class AuthorDomain(
     val name: String,
     val phone: String?,
 )

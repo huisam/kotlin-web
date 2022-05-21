@@ -26,7 +26,7 @@ repositories {
 
 object Version {
     const val springCloudVersion = "2021.0.2"
-    const val testcontainersVersion = "1.17.1"
+    const val testcontainersVersion = "1.17.2"
 }
 
 dependencies {

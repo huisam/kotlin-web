@@ -10,10 +10,10 @@ import javax.persistence.PersistenceContext
 
 @ComponentScan(basePackageClasses = [PersistencePackage::class])
 @TestConfiguration
-class PersistenceTestConfiguration
+class PersistenceTestContextConfiguration
 
 
-@ContextConfiguration(classes = [PersistenceTestConfiguration::class])
+@ContextConfiguration(classes = [PersistenceTestContextConfiguration::class])
 @AutoConfigurePersistence
 @Transactional
 @SpringBootTest

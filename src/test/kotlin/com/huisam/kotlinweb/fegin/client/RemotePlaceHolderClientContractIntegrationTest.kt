@@ -1,10 +1,11 @@
 package com.huisam.kotlinweb.fegin.client
 
+import com.huisam.kotlinweb.fegin.AbstractFeignContractTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-internal class RemotePlaceHolderClientContractIntegrationTest : FeignContractTest() {
+internal class RemotePlaceHolderClientContractIntegrationTest : AbstractFeignContractTest() {
 
     @Autowired
     private lateinit var client: RemotePlaceHolderClient

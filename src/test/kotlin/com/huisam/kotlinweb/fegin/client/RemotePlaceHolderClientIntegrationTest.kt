@@ -1,12 +1,13 @@
 package com.huisam.kotlinweb.fegin.client
 
 import com.github.tomakehurst.wiremock.client.WireMock.*
+import com.huisam.kotlinweb.fegin.AbstractFeignWireMockTest
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowable
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-internal class RemotePlaceHolderClientIntegrationTest : FeignWireMockTest() {
+internal class RemotePlaceHolderClientIntegrationTest : AbstractFeignWireMockTest() {
 
     @Autowired
     private lateinit var client: RemotePlaceHolderClient

@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.fegin.controller
+package com.huisam.kotlinweb.controller
 
 import com.huisam.kotlinweb.fegin.client.RemotePlaceHolderClient
 import com.huisam.kotlinweb.fegin.client.rest.RestPlaceHolderPost

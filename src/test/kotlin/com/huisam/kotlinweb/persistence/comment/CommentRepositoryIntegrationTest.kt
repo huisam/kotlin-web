@@ -4,10 +4,8 @@ import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 
-@SpringBootTest
 internal class CommentRepositoryIntegrationTest : AbstractPersistenceTest() {
     @Autowired
     private lateinit var commentRepository: CommentRepository

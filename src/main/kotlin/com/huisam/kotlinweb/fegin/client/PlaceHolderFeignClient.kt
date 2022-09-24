@@ -5,7 +5,6 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import com.huisam.kotlinweb.fegin.client.rest.RestPlaceHolderPost
 import feign.FeignException
 import feign.Response
-import org.apache.commons.io.IOUtils
 import org.hibernate.annotations.common.util.impl.LoggerFactory.logger
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.http.HttpStatus
@@ -30,10 +29,10 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        val responseBody = IOUtils.toString(response.body().asInputStream())
+        val responseBody = String(response.body().asInputStream().readAllBytes())
         log.info("request : ${response.request()}, response : $responseBody")
 
-        return objectMapper.readValue<List<RestPlaceHolderPost>>(responseBody)
+        return objectMapper.readValue(responseBody)
     }
 
     fun post(id: Long): RestPlaceHolderPost {
@@ -43,10 +42,10 @@ class RemotePlaceHolderClient(
             // custom your exception
             throw IllegalStateException(feignException)
         }
-        val responseBody = IOUtils.toString(response.body().asInputStream())
+        val responseBody = String(response.body().asInputStream().readAllBytes())
         log.info("request : ${response.request()}, response : $responseBody")
 
-        return objectMapper.readValue<RestPlaceHolderPost>(responseBody)
+        return objectMapper.readValue(responseBody)
     }
 
     private fun Response.throwIfError(): Response {

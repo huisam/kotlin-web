@@ -6,9 +6,7 @@ import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
 internal class PostsRepositoryIntegrationTest : AbstractPersistenceTest() {
 
     @Autowired

@@ -2,14 +2,19 @@ package com.huisam.kotlinweb.fegin
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.huisam.kotlinweb.fegin.config.AutoConfigureTestFeign
-import com.huisam.kotlinweb.fegin.config.FeignClientConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.ComponentScan
+import org.springframework.test.context.ContextConfiguration
 
+@TestConfiguration
 @ComponentScan(basePackageClasses = [FeignPackage::class])
+class FeignTestContextConfiguration
+
+@ContextConfiguration(classes = [FeignTestContextConfiguration::class])
 @AutoConfigureTestFeign
-@SpringBootTest(classes = [FeignClientConfiguration::class])
+@SpringBootTest
 abstract class AbstractFeignContractTest {
     @Autowired
     protected lateinit var objectMapper: ObjectMapper

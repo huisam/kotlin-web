@@ -9,7 +9,7 @@ import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.test.context.ActiveProfiles
 
-@ComponentScan(basePackageClasses = [BaseFeignPackage::class])
+@ComponentScan(basePackageClasses = [FeignPackage::class])
 @ActiveProfiles("wiremock")
 @AutoConfigureWireMock(port = 0)
 @AutoConfigureTestFeign

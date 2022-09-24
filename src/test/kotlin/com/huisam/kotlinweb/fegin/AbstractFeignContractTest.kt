@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.ComponentScan
 
-@ComponentScan(basePackageClasses = [BaseFeignPackage::class])
+@ComponentScan(basePackageClasses = [FeignPackage::class])
 @AutoConfigureTestFeign
 @SpringBootTest(classes = [FeignClientConfiguration::class])
 abstract class AbstractFeignContractTest {

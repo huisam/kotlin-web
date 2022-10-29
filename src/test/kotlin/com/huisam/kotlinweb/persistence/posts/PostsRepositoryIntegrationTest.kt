@@ -23,12 +23,11 @@ internal class PostsRepositoryIntegrationTest : AbstractPersistenceTest() {
         // when
         postsRepository.save(posts)
         entityManager.flushAndClear()
-        val result = postsRepository.findById(1L)
+        val result = postsRepository.findById(posts.id!!)
 
         // then
         then(result.get().text).isEqualTo("length 1")
         then(result).hasValue(posts)
-
     }
 
     @AfterEach

@@ -11,14 +11,14 @@
     "core-js": "3.26.0",
     "path": "0.12.7",
     "request": "2.88.2",
-    "vue": "3.2.39",
+    "vue": "3.2.41",
     "vue-router": "4.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "5.0.8",
     "@vue/cli-plugin-eslint": "5.0.8",
     "@vue/cli-service": "5.0.8",
-    "@vue/compiler-sfc": "3.2.39",
+    "@vue/compiler-sfc": "3.2.41",
     "babel-eslint": "10.1.0",
     "eslint": "7.32.0",
     "eslint-plugin-vue": "9.6.0"

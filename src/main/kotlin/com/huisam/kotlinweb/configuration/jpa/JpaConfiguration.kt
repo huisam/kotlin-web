@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.jpa
+package com.huisam.kotlinweb.configuration.jpa
 
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing

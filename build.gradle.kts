@@ -34,11 +34,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-json")
+    implementation("org.springframework.data:spring-data-elasticsearch:4.4.5")
     implementation("org.springframework.retry:spring-retry")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("io.github.openfeign:feign-hc5")
     implementation("io.github.openfeign:feign-okhttp")
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("org.springframework.boot:spring-boot-starter-json")
 
     // database
     runtimeOnly("com.h2database:h2")
@@ -54,7 +55,6 @@ dependencies {
     // test
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    testImplementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.testcontainers:junit-jupiter")
 }

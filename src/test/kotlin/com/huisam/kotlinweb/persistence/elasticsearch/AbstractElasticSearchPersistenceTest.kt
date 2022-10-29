@@ -1,5 +1,6 @@
-package com.huisam.kotlinweb.persistence.mysql
+package com.huisam.kotlinweb.persistence.elasticsearch
 
+import org.assertj.core.api.WithAssertions
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.context.TypeExcludeFilter
@@ -10,28 +11,18 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.transaction.annotation.Transactional
-import javax.persistence.EntityManager
-import javax.persistence.PersistenceContext
 
 @EnableJpaRepositories(
-    basePackageClasses = [MysqlPersistencePackage::class],
+    basePackageClasses = [ElasticSearchPersistencePackage::class],
     excludeFilters = [ComponentScan.Filter(type = FilterType.CUSTOM, classes = [TypeExcludeFilter::class])]
 )
 @TestConfiguration
-class MysqlPersistenceTestContextConfiguration
+class ElasticSearchPersistenceTestContextConfiguration
 
 
-@ContextConfiguration(classes = [MysqlPersistenceTestContextConfiguration::class])
-@AutoConfigureMysqlPersistence
+@ContextConfiguration(classes = [ElasticSearchPersistenceTestContextConfiguration::class])
+@AutoConfigureElasticsearchPersistence
 @Transactional
 @EnableAutoConfiguration
 @ExtendWith(SpringExtension::class)
-abstract class AbstractMysqlPersistenceTest {
-
-    @PersistenceContext
-    protected lateinit var entityManager: EntityManager
-    fun EntityManager.flushAndClear() {
-        flush()
-        clear()
-    }
-}
+abstract class AbstractElasticSearchPersistenceTest : WithAssertions

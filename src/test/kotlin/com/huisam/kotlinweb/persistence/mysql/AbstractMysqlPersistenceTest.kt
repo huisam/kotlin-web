@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence
+package com.huisam.kotlinweb.persistence.mysql
 
 import org.springframework.boot.context.TypeExcludeFilter
 import org.springframework.boot.test.context.SpringBootTest
@@ -11,18 +11,18 @@ import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 
 @ComponentScan(
-    basePackageClasses = [PersistencePackage::class],
+    basePackageClasses = [MysqlPersistencePackage::class],
     excludeFilters = [ComponentScan.Filter(type = FilterType.CUSTOM, classes = [TypeExcludeFilter::class])]
 )
 @TestConfiguration
-class PersistenceTestContextConfiguration
+class MysqlPersistenceTestContextConfiguration
 
 
-@ContextConfiguration(classes = [PersistenceTestContextConfiguration::class])
-@AutoConfigurePersistence
+@ContextConfiguration(classes = [MysqlPersistenceTestContextConfiguration::class])
+@AutoConfigureMysqlPersistence
 @Transactional
 @SpringBootTest
-abstract class AbstractPersistenceTest {
+abstract class AbstractMysqlPersistenceTest {
 
     @PersistenceContext
     protected lateinit var entityManager: EntityManager

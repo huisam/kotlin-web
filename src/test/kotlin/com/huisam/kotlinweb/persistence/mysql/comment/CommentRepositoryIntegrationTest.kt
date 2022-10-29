@@ -1,12 +1,12 @@
-package com.huisam.kotlinweb.persistence.comment
+package com.huisam.kotlinweb.persistence.mysql.comment
 
-import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
+import com.huisam.kotlinweb.persistence.mysql.AbstractMysqlPersistenceTest
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import java.time.LocalDateTime
 
-internal class CommentRepositoryIntegrationTest : AbstractPersistenceTest() {
+internal class CommentRepositoryIntegrationTest : AbstractMysqlPersistenceTest() {
     @Autowired
     private lateinit var commentRepository: CommentRepository
 

@@ -1,12 +1,12 @@
-package com.huisam.kotlinweb.persistence.student
+package com.huisam.kotlinweb.persistence.mysql.student
 
-import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
+import com.huisam.kotlinweb.persistence.mysql.AbstractMysqlPersistenceTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
 
-internal class TeacherRepositoryIntegrationTest : AbstractPersistenceTest() {
+internal class TeacherRepositoryIntegrationTest : AbstractMysqlPersistenceTest() {
 
     @Autowired
     private lateinit var teacherRepository: TeacherRepository

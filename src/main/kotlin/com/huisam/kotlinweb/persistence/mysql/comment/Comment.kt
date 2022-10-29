@@ -1,6 +1,6 @@
-package com.huisam.kotlinweb.persistence.comment
+package com.huisam.kotlinweb.persistence.mysql.comment
 
-import com.huisam.kotlinweb.persistence.posts.Posts
+import com.huisam.kotlinweb.persistence.mysql.posts.Posts
 import java.time.LocalDateTime
 import javax.persistence.*
 

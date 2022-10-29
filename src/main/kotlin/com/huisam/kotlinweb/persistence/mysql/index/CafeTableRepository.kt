@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.index
+package com.huisam.kotlinweb.persistence.mysql.index
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Component

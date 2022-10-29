@@ -1,3 +1,0 @@
-package com.huisam.kotlinweb.persistence
-
-interface PersistencePackage

@@ -1,13 +1,13 @@
-package com.huisam.kotlinweb.persistence.posts
+package com.huisam.kotlinweb.persistence.mysql.posts
 
-import com.huisam.kotlinweb.persistence.AbstractPersistenceTest
-import com.huisam.kotlinweb.persistence.author.Author
+import com.huisam.kotlinweb.persistence.mysql.AbstractMysqlPersistenceTest
+import com.huisam.kotlinweb.persistence.mysql.author.Author
 import org.assertj.core.api.BDDAssertions.then
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-internal class PostsRepositoryIntegrationTest : AbstractPersistenceTest() {
+internal class PostsRepositoryIntegrationTest : AbstractMysqlPersistenceTest() {
 
     @Autowired
     private lateinit var postsRepository: PostsRepository

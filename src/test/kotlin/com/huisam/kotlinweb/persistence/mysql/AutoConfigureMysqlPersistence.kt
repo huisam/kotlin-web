@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence
+package com.huisam.kotlinweb.persistence.mysql
 
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration
 import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
@@ -16,4 +16,4 @@ import org.springframework.boot.autoconfigure.transaction.TransactionAutoConfigu
     HibernateJpaAutoConfiguration::class,
     TransactionAutoConfiguration::class,
 )
-annotation class AutoConfigurePersistence
+annotation class AutoConfigureMysqlPersistence

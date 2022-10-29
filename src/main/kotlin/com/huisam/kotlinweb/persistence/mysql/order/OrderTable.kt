@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.order
+package com.huisam.kotlinweb.persistence.mysql.order
 
 import org.springframework.data.annotation.CreatedDate
 import java.math.BigDecimal

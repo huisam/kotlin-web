@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.author
+package com.huisam.kotlinweb.persistence.mysql.author
 
 import com.huisam.kotlinweb.domain.AuthorDomain
 import javax.persistence.Column

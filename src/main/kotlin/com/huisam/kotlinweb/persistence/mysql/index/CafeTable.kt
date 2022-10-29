@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.index
+package com.huisam.kotlinweb.persistence.mysql.index
 
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate

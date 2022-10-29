@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.posts
+package com.huisam.kotlinweb.persistence.mysql.posts
 
 import org.springframework.data.jpa.repository.JpaRepository
 

@@ -1,0 +1,3 @@
+package com.huisam.kotlinweb.persistence.mysql
+
+interface MysqlPersistencePackage

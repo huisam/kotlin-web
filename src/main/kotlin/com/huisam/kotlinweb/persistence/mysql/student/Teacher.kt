@@ -1,4 +1,4 @@
-package com.huisam.kotlinweb.persistence.student
+package com.huisam.kotlinweb.persistence.mysql.student
 
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*

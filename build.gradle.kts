@@ -35,7 +35,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-json")
-    implementation("org.springframework.data:spring-data-elasticsearch:4.4.5")
+    implementation("org.springframework.data:spring-data-elasticsearch:4.4.6")
     implementation("org.springframework.retry:spring-retry")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("io.github.openfeign:feign-hc5")

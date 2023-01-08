@@ -11,12 +11,12 @@ test-containers = "1.17.6"
 spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
 spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
 spring-boot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+spring-boot-data-elasticsearch = { module = "org.springframework.boot:spring-boot-starter-data-elasticsearch", version.ref = "spring-boot" }
 spring-boot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
 spring-boot-json = { module = "org.springframework.boot:spring-boot-starter-json", version.ref = "spring-boot" }
 spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
 
 # spring
-spring-data-elasticsearch = { module = "org.springframework.data:spring-data-elasticsearch", version = "5.0.0" }
 spring-retry = { module = "org.springframework.retry:spring-retry" }
 
 # spring-cloud

@@ -31,7 +31,7 @@ dependencies {
     implementation(libs.spring.boot.web)
     implementation(libs.spring.boot.validation)
     implementation(libs.spring.boot.json)
-    implementation(libs.spring.data.elasticsearch)
+    implementation(libs.spring.boot.data.elasticsearch)
     implementation(libs.spring.retry)
     implementation(libs.spring.cloud.openfeign)
     implementation(libs.spring.cloud.feign.httpclient)

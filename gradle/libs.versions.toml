@@ -1,0 +1,56 @@
+[versions]
+kotlin = "1.8.0"
+kotlin-coroutine = "1.6.4"
+spring-boot = "3.0.1"
+spring-cloud = "2022.0.0"
+
+test-containers = "1.17.6"
+
+[libraries]
+# spring boot
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+spring-boot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot" }
+spring-boot-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
+spring-boot-json = { module = "org.springframework.boot:spring-boot-starter-json", version.ref = "spring-boot" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+
+# spring
+spring-data-elasticsearch = { module = "org.springframework.data:spring-data-elasticsearch", version = "5.0.0" }
+spring-retry = { module = "org.springframework.retry:spring-retry" }
+
+# spring-cloud
+spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "spring-cloud" }
+spring-cloud-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign" }
+spring-cloud-feign-httpclient = { module = "io.github.openfeign:feign-hc5" }
+spring-cloud-feign-okhttp = { module = "io.github.openfeign:feign-okhttp" }
+spring-cloud-contract-wiremock = { module = "org.springframework.cloud:spring-cloud-contract-wiremock" }
+
+# kotlin
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.4.0" }
+kotlin-coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutine" }
+kotlin-coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutine" }
+
+# common
+jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+h2 = { module = "com.h2database:h2", version = "2.1.214" }
+mysql = { module = "mysql:mysql-connector-java", version = "8.0.31" }
+
+# test
+test-containers = { module = "org.testcontainers:testcontainers", version.ref = "test-containers" }
+test-containers-mysql = { module = "org.testcontainers:mysql", version.ref = "test-containers" }
+
+[bundles]
+test-containers = ["test-containers", "test-containers-mysql"]
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+
+kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+kotlin-noarg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }

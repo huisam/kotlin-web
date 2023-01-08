@@ -1,15 +1,14 @@
-import Build_gradle.Version.springCloudVersion
-import Build_gradle.Version.testcontainersVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("org.springframework.boot") version "3.0.1"
-    id("io.spring.dependency-management") version "1.1.0"
-    id("org.jetbrains.kotlin.plugin.allopen") version "1.8.0"
-    kotlin("jvm") version "1.8.0"
-    kotlin("kapt") version "1.8.0"
-    kotlin("plugin.spring") version "1.8.0"
-    kotlin("plugin.jpa") version "1.8.0"
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.kotlin.spring)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.jpa)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.noarg)
+    alias(libs.plugins.kotlin.allopen)
 }
 
 group = "com.huisam"
@@ -24,47 +23,36 @@ repositories {
 
 }
 
-object Version {
-    const val springCloudVersion = "2022.0.0"
-    const val testcontainersVersion = "1.17.6"
-}
-
 dependencies {
+    implementation(platform(rootProject.libs.spring.cloud.dependencies))
+
     // spring
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-json")
-    implementation("org.springframework.data:spring-data-elasticsearch:5.0.0")
-    implementation("org.springframework.retry:spring-retry")
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("io.github.openfeign:feign-hc5")
-    implementation("io.github.openfeign:feign-okhttp")
+    implementation(libs.spring.boot.data.jpa)
+    implementation(libs.spring.boot.web)
+    implementation(libs.spring.boot.validation)
+    implementation(libs.spring.boot.json)
+    implementation(libs.spring.data.elasticsearch)
+    implementation(libs.spring.retry)
+    implementation(libs.spring.cloud.openfeign)
+    implementation(libs.spring.cloud.feign.httpclient)
+    implementation(libs.spring.cloud.feign.okhttp)
 
     // database
-    runtimeOnly("com.h2database:h2")
-    runtimeOnly("mysql:mysql-connector-java")
+    runtimeOnly(libs.h2)
+    runtimeOnly(libs.mysql)
 
     // kotlin
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    implementation(libs.jackson)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.coroutine.core)
+    implementation(libs.kotlin.datetime)
 
     // test
-    testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.testcontainers:junit-jupiter")
-}
-
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
-        mavenBom("org.testcontainers:testcontainers-bom:${testcontainersVersion}")
-    }
+    testImplementation(libs.kotlin.coroutine.test)
+    testImplementation(libs.spring.boot.test)
+    testImplementation(libs.spring.cloud.contract.wiremock)
+    testImplementation(libs.bundles.test.containers)
 }
 
 tasks.withType<KotlinCompile> {
@@ -79,9 +67,9 @@ tasks.withType<Test> {
 }
 
 allOpen {
-    annotation("javax.persistence.Entity")
+    annotation("jakarta.persistence.Entity")
 }
 
 noArg {
-    annotation("javax.persistence.Entity")
+    annotation("jakarta.persistence.Entity")
 }

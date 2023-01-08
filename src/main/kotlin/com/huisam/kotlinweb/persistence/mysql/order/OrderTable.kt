@@ -1,9 +1,9 @@
 package com.huisam.kotlinweb.persistence.mysql.order
 
+import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import java.math.BigDecimal
 import java.time.ZonedDateTime
-import javax.persistence.*
 
 @Entity
 @Table(name = "order_table")

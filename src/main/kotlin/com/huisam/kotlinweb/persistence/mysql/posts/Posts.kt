@@ -3,7 +3,7 @@ package com.huisam.kotlinweb.persistence.mysql.posts
 import com.huisam.kotlinweb.domain.PostsDomain
 import com.huisam.kotlinweb.persistence.mysql.author.Author
 import com.huisam.kotlinweb.persistence.mysql.comment.Comment
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "posts")

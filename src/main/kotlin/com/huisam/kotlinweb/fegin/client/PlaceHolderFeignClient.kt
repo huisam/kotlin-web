@@ -5,7 +5,7 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import com.huisam.kotlinweb.fegin.client.rest.RestPlaceHolderPost
 import feign.FeignException
 import feign.Response
-import org.hibernate.annotations.common.util.impl.LoggerFactory.logger
+import org.slf4j.LoggerFactory
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.http.HttpStatus
 import org.springframework.retry.annotation.Backoff
@@ -19,7 +19,7 @@ class RemotePlaceHolderClient(
     private val placeHolderFeignClient: PlaceHolderFeignClient,
     private val objectMapper: ObjectMapper,
 ) {
-    private val log = logger(RemotePlaceHolderClient::class.java)
+    private val log = LoggerFactory.getLogger(RemotePlaceHolderClient::class.java)
 
     @Retryable(backoff = Backoff(delay = 150L), maxAttempts = 3)
     fun posts(): List<RestPlaceHolderPost> {

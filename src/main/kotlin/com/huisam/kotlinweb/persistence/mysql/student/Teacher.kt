@@ -1,8 +1,8 @@
 package com.huisam.kotlinweb.persistence.mysql.student
 
+import jakarta.persistence.*
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
-import javax.persistence.*
 
 interface TeacherRepository : JpaRepository<Teacher, UUID>
 

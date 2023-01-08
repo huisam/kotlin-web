@@ -1,8 +1,8 @@
 package com.huisam.kotlinweb.persistence.mysql.author
 
 import com.huisam.kotlinweb.domain.AuthorDomain
-import javax.persistence.Column
-import javax.persistence.Embeddable
+import jakarta.persistence.Column
+import jakarta.persistence.Embeddable
 
 @Embeddable
 class Author(

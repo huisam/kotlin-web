@@ -1,8 +1,8 @@
 package com.huisam.kotlinweb.persistence.mysql.comment
 
 import com.huisam.kotlinweb.persistence.mysql.posts.Posts
+import jakarta.persistence.*
 import java.time.LocalDateTime
-import javax.persistence.*
 
 @Entity
 @Table(name = "comment")

@@ -1,5 +1,7 @@
 package com.huisam.kotlinweb.persistence.mysql
 
+import jakarta.persistence.EntityManager
+import jakarta.persistence.PersistenceContext
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.context.TypeExcludeFilter
@@ -10,8 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.transaction.annotation.Transactional
-import javax.persistence.EntityManager
-import javax.persistence.PersistenceContext
+
 
 @EnableJpaRepositories(
     basePackageClasses = [MysqlPersistencePackage::class],

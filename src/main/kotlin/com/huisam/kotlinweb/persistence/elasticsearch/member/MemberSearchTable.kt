@@ -1,8 +1,8 @@
 package com.huisam.kotlinweb.persistence.elasticsearch.member
 
+import jakarta.persistence.*
 import org.springframework.data.elasticsearch.annotations.Document
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
-import javax.persistence.*
 
 @Document(indexName = "member")
 @Entity

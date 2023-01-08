@@ -1,6 +1,6 @@
 package com.huisam.kotlinweb.fegin.config
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory.logger
+import org.slf4j.LoggerFactory
 import org.springframework.retry.RetryCallback
 import org.springframework.retry.RetryContext
 import org.springframework.retry.listener.RetryListenerSupport
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class RetryLogger : RetryListenerSupport() {
-    private val log = logger(this::class.java)
+    private val log = LoggerFactory.getLogger(RetryLogger::class.java)
     override fun <T : Any?, E : Throwable> onError(
         context: RetryContext,
         callback: RetryCallback<T, E>,

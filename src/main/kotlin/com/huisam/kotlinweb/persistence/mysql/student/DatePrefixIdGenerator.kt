@@ -3,7 +3,6 @@ package com.huisam.kotlinweb.persistence.mysql.student
 import org.hibernate.engine.spi.SharedSessionContractImplementor
 import org.hibernate.id.enhanced.TableGenerator
 import org.hibernate.service.ServiceRegistry
-import org.hibernate.type.StandardBasicTypes
 import org.hibernate.type.Type
 import java.io.Serializable
 import java.time.LocalDateTime
@@ -12,7 +11,7 @@ import java.util.*
 
 class DatePrefixIdGenerator : TableGenerator() {
     override fun configure(type: Type, params: Properties, serviceRegistry: ServiceRegistry) {
-        super.configure(StandardBasicTypes.LONG, params, serviceRegistry)
+        super.configure(type, params, serviceRegistry)
     }
 
     override fun generate(session: SharedSessionContractImplementor, obj: Any): Serializable {

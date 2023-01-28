@@ -1,7 +1,7 @@
 [versions]
 kotlin = "1.8.0"
 kotlin-coroutine = "1.6.4"
-spring-boot = "3.0.1"
+spring-boot = "3.0.2"
 spring-cloud = "2022.0.1"
 
 test-containers = "1.17.6"

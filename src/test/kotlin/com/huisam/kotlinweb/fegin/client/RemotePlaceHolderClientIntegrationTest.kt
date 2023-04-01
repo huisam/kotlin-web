@@ -23,7 +23,7 @@ internal class RemotePlaceHolderClientIntegrationTest : AbstractFeignWireMockTes
         val exception = catchThrowable { client.posts() }
         // then
         verify(
-            3,
+            1,
             getRequestedFor(urlEqualTo("/posts"))
         )
         assertThat(exception).isInstanceOf(IllegalStateException::class.java)

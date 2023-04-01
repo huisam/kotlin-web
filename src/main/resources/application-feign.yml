@@ -1,6 +1,6 @@
 external:
   api:
-    placeHolder: https://jsonplaceholder.typicode.com/
+    placeHolder: https://jsonplaceholder.typicode.com
 
 
 feign:

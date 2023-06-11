@@ -19,7 +19,7 @@ spring:
       hibernate.order_inserts: true
       hibernate.jdbc.batch_size: 200
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: false
 
 

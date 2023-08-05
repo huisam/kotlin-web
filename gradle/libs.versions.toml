@@ -1,6 +1,6 @@
 [versions]
 kotlin = "1.9.0"
-kotlin-coroutine = "1.7.1"
+kotlin-coroutine = "1.7.3"
 spring-boot = "3.1.2"
 spring-cloud = "2022.0.3"
 

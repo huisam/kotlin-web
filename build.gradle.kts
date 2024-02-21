@@ -66,6 +66,18 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.register("test1") {
+    println("hi test1")
+}
+
+tasks.register("test2") {
+    println("hi test2")
+}
+
+tasks.register("test3") {
+    println("hi test3")
+}
+
 allOpen {
     annotation("jakarta.persistence.Entity")
 }

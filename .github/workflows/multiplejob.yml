@@ -7,22 +7,19 @@ on:
 
 jobs:
   job1:
-    name: first gradle job
     uses: ./.github/workflows/executeGradleTask.yml
     with:
       task-name: test1
     secrets: inherit
 
   job2:
-    name: second gradle job
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test1
+      task-name: test2
     secrets: inherit
 
   job3:
-    name: third gradle job
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test1
+      task-name: test3
     secrets: inherit

@@ -8,45 +8,21 @@ on:
 jobs:
   job1:
     name: first gradle job
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
-      - name: Run test1
-        run: ./gradlew test1
+    uses: ./.github/workflows/executeGradleTask.yml
+    with:
+      task-name: test1
+    secrets: inherit
 
   job2:
     name: second gradle job
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
-      - name: Run test2
-        run: ./gradlew test2
+    uses: ./.github/workflows/executeGradleTask.yml
+    with:
+      task-name: test1
+    secrets: inherit
 
   job3:
     name: third gradle job
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
-      - name: Run test3
-        run: ./gradlew test3
+    uses: ./.github/workflows/executeGradleTask.yml
+    with:
+      task-name: test1
+    secrets: inherit

@@ -78,6 +78,10 @@ tasks.register("test3") {
     println("hi test3")
 }
 
+tasks.register("test4") {
+    println("hi test4")
+}
+
 allOpen {
     annotation("jakarta.persistence.Entity")
 }

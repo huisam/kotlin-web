@@ -10,16 +10,19 @@ jobs:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
       task-name: test1
-    secrets: inherit
 
   job2:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
       task-name: test2
-    secrets: inherit
 
   job3:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
       task-name: test3
-    secrets: inherit
+
+  job4:
+    uses: ./.github/workflows/executeGradleTask.yml
+    with:
+      task-name: test4
+    needs: [job1]

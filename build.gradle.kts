@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.scripting.compiler.plugin.impl.failure
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
@@ -76,6 +77,7 @@ tasks.register("test2") {
 
 tasks.register("test3") {
     println("hi test3")
+    throw GradleException("always fail")
 }
 
 tasks.register("test4") {

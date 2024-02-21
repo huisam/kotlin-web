@@ -11,7 +11,7 @@ on:
 
 jobs:
   run-gradle-task-workflow:
-    name: run gradle ${{ inputs.task-name }} task
+    name: ${{ inputs.task-name }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

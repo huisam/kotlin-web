@@ -1,4 +1,4 @@
-name: multiple job concurrency
+name: multiple job pipeline
 
 on:
   workflow_dispatch:

@@ -6,7 +6,7 @@ on:
     - cron: '0 8 * * *'
 
 jobs:
-  job1:
+  order:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
       task-name: test1

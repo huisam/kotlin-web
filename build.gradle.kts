@@ -69,6 +69,7 @@ tasks.withType<Test> {
 
 tasks.register("test1") {
     println("hi test1")
+    throw GradleException("always fail")
 }
 
 tasks.register("test2") {

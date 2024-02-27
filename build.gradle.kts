@@ -77,7 +77,6 @@ tasks.register("test2") {
 
 tasks.register("test3") {
     println("hi test3")
-    throw GradleException("always fail")
 }
 
 tasks.register("test4") {

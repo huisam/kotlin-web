@@ -2,7 +2,7 @@
 kotlin = "1.9.23"
 kotlin-coroutine = "1.8.0"
 spring-boot = "3.2.3"
-spring-cloud = "2023.0.0"
+spring-cloud = "2023.0.1"
 
 test-containers = "1.19.7"
 

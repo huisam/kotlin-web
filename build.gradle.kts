@@ -1,5 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.scripting.compiler.plugin.impl.failure
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
@@ -14,7 +13,8 @@ plugins {
 
 group = "com.huisam"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_21
+java.targetCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
@@ -56,10 +56,9 @@ dependencies {
     testImplementation(libs.bundles.test.containers)
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "17"
+tasks.named("compileKotlin", KotlinCompilationTask::class) {
+    compilerOptions {
+        freeCompilerArgs.addAll("-Xjsr305=strict")
     }
 }
 

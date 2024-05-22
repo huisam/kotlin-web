@@ -17,7 +17,7 @@ spring-boot-json = { module = "org.springframework.boot:spring-boot-starter-json
 spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
 
 # spring
-spring-retry = { module = "org.springframework.retry:spring-retry", version = "2.0.5" }
+spring-retry = { module = "org.springframework.retry:spring-retry", version = "2.0.6" }
 
 # spring-cloud
 spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "spring-cloud" }

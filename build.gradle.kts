@@ -13,8 +13,6 @@ plugins {
 
 group = "com.huisam"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_21
-java.targetCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
@@ -22,6 +20,13 @@ repositories {
         url = uri("https://repo.spring.io/milestone")
     }
 
+}
+
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
 }
 
 dependencies {

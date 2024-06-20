@@ -9,20 +9,20 @@ jobs:
   job1:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test1
+      task-name: plusTest
 
   job2:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test2
+      task-name: minusTest
 
   job3:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test3
+      task-name: mathTest
 
   job4:
     uses: ./.github/workflows/executeGradleTask.yml
     with:
-      task-name: test4
+      task-name: plusOrMinusTest
     needs: [job1]

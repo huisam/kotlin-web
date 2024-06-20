@@ -71,20 +71,34 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.register("test1") {
-    println("hi test1")
+tasks.register<Test>("plusTest") {
+    useJUnitPlatform {
+        includeTags = setOf("plus")
+    }
 }
 
-tasks.register("test2") {
-    println("hi test2")
+tasks.register<Test>("minusTest") {
+    useJUnitPlatform {
+        includeTags = setOf("minus")
+    }
 }
 
-tasks.register("test3") {
-    println("hi test3")
+tasks.register<Test>("mathTest") {
+    useJUnitPlatform {
+        includeTags = setOf("math")
+    }
 }
 
-tasks.register("test4") {
-    println("hi test4")
+tasks.register<Test>("plusAndMinusTest") {
+    useJUnitPlatform {
+        includeTags = setOf("plus & minus")
+    }
+}
+
+tasks.register<Test>("plusOrMinusTest") {
+    useJUnitPlatform {
+        includeTags = setOf("plus | minus")
+    }
 }
 
 allOpen {

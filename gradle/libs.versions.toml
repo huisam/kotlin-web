@@ -35,7 +35,7 @@ kotlin-coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-tes
 
 # common
 jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
-h2 = { module = "com.h2database:h2", version = "2.2.224" }
+h2 = { module = "com.h2database:h2", version = "2.3.230" }
 mysql = { module = "mysql:mysql-connector-java", version = "8.0.33" }
 
 # test

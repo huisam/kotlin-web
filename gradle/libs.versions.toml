@@ -4,7 +4,7 @@ kotlin-coroutine = "1.8.1"
 spring-boot = "3.3.1"
 spring-cloud = "2023.0.2"
 
-test-containers = "1.19.8"
+test-containers = "1.20.0"
 
 [libraries]
 # spring boot
